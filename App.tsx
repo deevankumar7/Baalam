@@ -7,8 +7,13 @@ import BallamPage from './components/BallamPage';
 import AboutSection from './components/AboutSection';
 import JobsSection from './components/JobsSection';
 import ContactSection from './components/ContactSection';
-import BackgroundElements from './components/BackgroundElements';
 import Footer from './components/Footer';
+import ResultsSection from './components/ResultsSection';
+import TeachersSection from './components/TeachersSection';
+import FaqSection from './components/FaqSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import BrochureSection from './components/BrochureSection';
+import AiAdvisor from './components/AiAdvisor';
 
 const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>('home');
@@ -28,7 +33,7 @@ const App: React.FC = () => {
       setTimeout(() => {
         const el = document.getElementById(path);
         if (el) {
-          const navHeight = 110; // Adjusted for larger header
+          const navHeight = 96; // Height of the navbar
           const target = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
           window.scrollTo({ top: target, behavior: 'smooth' });
         }
@@ -47,6 +52,12 @@ const App: React.FC = () => {
           <>
             <HeroPortals onNavigate={handleNavigate} />
             <AboutSection />
+            <ResultsSection />
+            <BrochureSection />
+            <TeachersSection />
+            <TestimonialsSection />
+            <FaqSection />
+            <AiAdvisor />
             <JobsSection />
             <ContactSection />
           </>
@@ -55,8 +66,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative text-slate-900 selection:bg-blue-600/10 font-sans">
-      <BackgroundElements />
+    <div className="min-h-screen relative text-slate-950 selection:bg-orange-600/10 font-sans">
       <Navbar onNavigate={handleNavigate} currentPath={currentPath} />
       <main className="relative z-10">
         {renderContent()}

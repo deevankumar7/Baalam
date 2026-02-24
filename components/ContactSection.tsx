@@ -1,57 +1,74 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, User } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-20 sm:py-32 px-4 sm:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-slate-500 text-xs font-black uppercase tracking-[0.4em] mb-4 block">Official Registry</span>
-          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 heading-serif">Contact Information</h2>
-        </div>
+    <section id="contact" className="py-24 bg-white">
+      <div className="section-container">
+        <div className="max-w-4xl mx-auto space-y-20">
+          <div className="text-center space-y-8">
+            <span className="text-orange-600 text-sm font-bold uppercase tracking-[0.3em] block">Connect With Us</span>
+            <h2 className="text-5xl md:text-7xl font-bold text-slate-900 heading-serif leading-tight">
+              Institutional Registry
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+              For admissions, academic inquiries, or faculty appointments, please visit our registry office or reach out through the following channels.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { 
-              icon: <User />, 
-              title: "Principal & Director", 
-              value: "V. Lakshmi Padmaja", 
-              sub: "M.Sc. M. Ed.",
-              border: "border-slate-100" 
-            },
-            { 
-              icon: <Phone />, 
-              title: "Direct Lines", 
-              value: "92465 43851", 
-              sub: "89772 24488",
-              border: "border-blue-100" 
-            },
-            { 
-              icon: <Mail />, 
-              title: "Institutional Mail", 
-              value: "askacademy@gmail.com", 
-              sub: "Response within 24h",
-              border: "border-orange-100" 
-            },
-            { 
-              icon: <MapPin />, 
-              title: "Main Campus", 
-              value: "Vidyanagar", 
-              sub: "Hyderabad-500044",
-              border: "border-slate-100" 
-            }
-          ].map((item, i) => (
-            <div key={i} className={`p-10 rounded-2xl bg-white border-2 ${item.border} text-center transition-all hover:shadow-md`}>
-              <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-900">
-                {/* Fixed TypeScript error by adding <any> to React.ReactElement cast to allow 'size' prop in cloneElement */}
-                {React.cloneElement(item.icon as React.ReactElement<any>, { size: 24 })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200 pb-3">Office Hours</h4>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-white rounded-2xl shadow-sm">
+                  <Clock size={24} className="text-orange-600" />
+                </div>
+                <div className="text-lg font-bold text-slate-700">
+                  <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                  <p className="text-slate-400 font-medium">Sunday: Closed</p>
+                </div>
               </div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{item.title}</p>
-              <p className="text-lg font-black text-slate-900 leading-tight">{item.value}</p>
-              <p className="text-xs font-bold text-slate-500 mt-1 uppercase tracking-wider">{item.sub}</p>
             </div>
-          ))}
+
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200 pb-3">Location</h4>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-white rounded-2xl shadow-sm">
+                  <MapPin size={24} className="text-orange-600" />
+                </div>
+                <div className="text-lg font-bold text-slate-700">
+                  <p>Vidyanagar, Hyderabad</p>
+                  <p className="text-slate-400 font-medium">Telangana - 500044</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200 pb-3">Direct Lines</h4>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-white rounded-2xl shadow-sm">
+                  <Phone size={24} className="text-orange-600" />
+                </div>
+                <div className="text-lg font-bold text-slate-700">
+                  <p>+91 92465 43851</p>
+                  <p>+91 89772 24488</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-200 pb-3">Email Registry</h4>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-white rounded-2xl shadow-sm">
+                  <Mail size={24} className="text-orange-600" />
+                </div>
+                <div className="text-lg font-bold text-slate-700">
+                  <p>askacademy@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

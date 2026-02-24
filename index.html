@@ -4,36 +4,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASK & Baalam Educational Societies | Institutional Registry</title>
+    <title>ASK & BAALAM EDUCATIONAL SOCIETIES | Academic Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        --ask-orange: #c2410c; /* Deeper institutional orange */
-        --baalam-blue: #1e3a8a; /* Formal navy blue */
-        --paper-cream: #fcfcfc; 
-        --ink-slate: #1e293b;
+        --ask-orange: #f97316;
+        --ask-orange-dark: #ea580c;
+        --baalam-blue: #2563eb;
+        --baalam-blue-dark: #1d4ed8;
+        --paper: #fdfdfb;
+        --ink: #0a0a0a;
+        --line: rgba(0, 0, 0, 0.05);
       }
       body {
-        font-family: 'Public Sans', sans-serif;
-        background-color: var(--paper-cream);
-        color: var(--ink-slate);
+        font-family: 'Inter', sans-serif;
+        background-color: var(--paper);
+        color: var(--ink);
         margin: 0;
         -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, .heading-serif {
-        font-family: 'Lora', serif;
+        font-family: 'Crimson Pro', serif;
         letter-spacing: -0.02em;
       }
+      .section-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .btn-human {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2.5rem;
+        font-weight: 700;
+        border-radius: 9999px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.7rem;
+      }
+      .split-pane {
+        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .academic-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 3rem;
+      }
+      .human-card {
+        background: white;
+        border: 1px solid var(--line);
+        padding: 3rem;
+        border-radius: 2.5rem;
+        transition: all 0.4s ease;
+      }
+      .human-card:hover {
+        box-shadow: 0 20px 40px -12px rgba(0,0,0,0.05);
+      }
       .textured-bg {
-        background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+        background-color: var(--paper);
+        background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 0);
         background-size: 24px 24px;
-      }
-      .shadow-edu {
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      }
-      .border-academic {
-        border: 1px solid #e2e8f0;
       }
     </style>
   <script type="importmap">
@@ -47,8 +80,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="textured-bg">
     <div id="root"></div>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
